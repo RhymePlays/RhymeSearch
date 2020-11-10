@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="../../RhymeSearch.js"></script>
+</head>
+<body style="margin: 5px;background: #303030;color: white;font-family: Roboto, Helvetica, Arial, sans-serif;">
+    
+    <input style="width: 100%;height: 100px;background: #505050;color: white;border: none;box-shadow: #1BADFF 0px 0px 1px 5px;" id="searchElem" onchange="searchElemChange(this.value)" type="text">
+    <h2 id="Result"></h2>
+
+    <script>
+
+        var RhymeSearchObj = new RhymeSearch()
+        
+        RhymeSearchObj.SearchableItems = ["Just", "A!", "Test", "just a test!!", "Apple", "Orange,", "Plum", "Wow", "Title", "Name", "Year", "Rhyme", "RhymeMusic", "RhymeSearch"]
+        
+        function searchElemChange(value){
+            document.getElementById("Result").innerHTML = RhymeSearchObj.sortedSearch(value)
+        }
+
+    </script>
+</body>
+</html>
